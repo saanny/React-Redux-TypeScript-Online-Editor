@@ -1,13 +1,21 @@
 import { useRef, useEffect } from "react";
+import "./preview.css";
 interface PreviewCodeProps {
   code: string;
 }
 const html = `
     <html>
-    <head></head>
+    <head>
+    <style>
+    html{
+      background-color:white;
+    }
+    </style>
+    </head>
     <body>
       <div id="root"></div>
       <script>
+        
         window.addEventListener('message',(event)=>{
           try{
             eval(event.data);
@@ -29,12 +37,14 @@ const PreviewCode: React.FC<PreviewCodeProps> = ({ code }) => {
     iframeRef.current.contentWindow.postMessage(code, "*");
   }, [code]);
   return (
-    <iframe
-      title="preview"
-      ref={iframeRef}
-      sandbox="allow-scripts"
-      srcDoc={html}
-    />
+    <div className="preview-wrapper">
+      <iframe
+        title="preview"
+        ref={iframeRef}
+        sandbox="allow-scripts"
+        srcDoc={html}
+      />
+    </div>
   );
 };
 export default PreviewCode;
