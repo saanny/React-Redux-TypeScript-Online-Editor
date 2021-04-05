@@ -22,6 +22,7 @@ const reducer = produce((state: CellsState = initialState, action: Action) => {
       const { id, content } = action.payload;
       state.data[id].content = content;
       return state;
+
     case ActionType.MOVE_CELL:
       const { direction } = action.payload;
       const index = state.order.findIndex((id) => id === action.payload.id);
