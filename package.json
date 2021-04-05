@@ -18,6 +18,7 @@
     "axios": "^0.21.1",
     "bulmaswatch": "^0.8.1",
     "esbuild-wasm": "^0.8.52",
+    "immer": "^9.0.1",
     "jscodeshift": "0.11.0",
     "localforage": "^1.9.0",
     "monaco-editor": "^0.23.0",
@@ -28,6 +29,7 @@
     "react-redux": "^7.2.3",
     "react-resizable": "^1.11.1",
     "react-scripts": "4.0.3",
+    "redux-thunk": "^2.3.0",
     "typescript": "^4.1.2",
     "web-vitals": "^1.0.1"
   },
