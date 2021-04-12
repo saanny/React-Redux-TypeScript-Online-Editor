@@ -8,8 +8,10 @@ interface CellListItemProps {
 const CellListItem: React.FC<CellListItemProps> = ({ cell }) => {
   return (
     <div className="cell-list-item">
+      <div className="action-bar-wrapper">
+        <ActionBar id={cell.id} />
+      </div>
       <CodeCell cell={cell} />
-      <ActionBar id={cell.id} />
     </div>
   );
 };

@@ -11,16 +11,18 @@ interface CodeCellProps {
 }
 const CodeCell: React.FC<CodeCellProps> = ({ cell }) => {
   const [code, setCode] = useState("");
+  const [err, setErr] = useState("");
   const { updateCell } = useActions();
-
   useEffect(() => {
     const timer = setTimeout(async () => {
-      const outPut = await bundle(cell.content);
-      setCode(outPut);
+      const output = await bundle(cell.content);
+      setCode(output.code);
+      setErr(output.err);
     }, 750);
-    return () => {
-      clearTimeout(timer);
-    };
+
+    // return () => {
+    //   clearTimeout(timer);
+    // };
   }, [cell.content]);
 
   return (
