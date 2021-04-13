@@ -2,8 +2,8 @@ import "./preview.css";
 import { useRef, useEffect } from "react";
 
 interface PreviewProps {
-  code: string;
-  err: string;
+  code: string | null;
+  err: string | null;
 }
 
 const html = `
